@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hangman – The Evolution of Radio</title>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- decorative paper scraps -->
+<div class="scraps" aria-hidden="true">
+  <div class="scrap s1"></div>
+  <div class="scrap s2"><span>ON AIR</span></div>
+  <div class="scrap s3"><span>AM 540<br>FM 98.5</span></div>
+  <div class="scrap s4"></div>
+  <div class="scrap s5"><span>Radio<br>1920</span></div>
+  <div class="scrap s6"></div>
+  <div class="tape t1"></div><div class="tape t2"></div><div class="tape t3"></div>
+</div>
+<canvas id="confetti"></canvas>
+<div class="wrap">
+
+<section id="start" class="card center">
+  <div class="sub">Hangman Game · Group 3</div>
+  <h1 class="title">The Evolution<br>of Radio</h1>
+  <p class="sub">5 rounds, 5 questions. Pick the right answer to save the little guy!<br>Every mistake gives him a body part... every right answer brings confetti.</p>
+  <button class="btn" id="go">Start</button>
+</section>
+
+<section id="game" class="card hidden">
+  <div class="top"><b id="rnd"></b><span class="dots" id="dots"></span></div>
+  <div class="stage">
+    <div class="board">
+      <svg viewBox="0 0 240 260" aria-label="Gallows">
+        <path d="M20 240H110M65 240V25H160V55"/>
+        <circle class="part" pathLength="1" cx="160" cy="75" r="20"/>
+        <path class="part" pathLength="1" d="M160 95V160"/>
+        <path class="part" pathLength="1" d="M160 110L130 138"/>
+        <path class="part" pathLength="1" d="M160 110L190 138"/>
+        <path class="part" pathLength="1" d="M160 160L135 205"/>
+        <path class="part" pathLength="1" d="M160 160L185 205"/>
+      </svg>
+      <div class="lives" id="lives"></div>
+    </div>
+    <div>
+      <p class="q" id="q"></p>
+      <div class="word" id="word"></div>
+      <div class="opts" id="opts"></div>
+      <div class="msg" id="msg"></div>
+      <button class="btn hidden" id="next">Next round →</button>
+    </div>
+  </div>
+</section>
+
+<section id="over" class="card center hidden over">
+  <h2 class="title">Game Over</h2>
+  <div class="board" style="max-width:300px;margin:0 auto"><svg class="final-fig" id="overFig" viewBox="0 0 240 260"></svg></div>
+  <p class="sub">The little guy is complete... But don't give up, try again! 📻</p>
+  <button class="btn" id="home">Back to start</button>
+</section>
+
+<section id="end" class="card center hidden">
+  <h2 class="title" id="endTitle"></h2>
+  <div class="board" style="max-width:260px;margin:0 auto"><svg class="final-fig" id="finalFig" viewBox="0 0 240 260"></svg></div>
+  <p class="sub" id="endTxt"></p>
+  <button class="btn" id="again">Play again</button> <button class="btn" id="home2">Back to start</button>
+</section>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
